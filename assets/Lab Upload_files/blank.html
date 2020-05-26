@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://n-7g52566f6zktw5yuj6sbxp2rmdj3nruyxrn7dna-0lu-script.googleusercontent.com/userCodeAppPanel -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./jsapi"></script><script>window.parent.maeExportApis_();</script>
+
+  
+    <!--<base target="_blank">--><base href="." target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Upload</title>
+    <link href="./icon" rel="stylesheet">
+    <link rel="stylesheet" href="./materialize.min.css">
+    <style>
+      .disclaimer{width: 480px; color:#646464;margin:20px auto;padding:0 16px;text-align:center;font:400 12px Roboto,Helvetica,Arial,sans-serif}.disclaimer a{color:#009688}#credit{display:none}
+       
+	   .input-field input[type=text]:focus + label {
+		 color: #00b0ff !important;
+	   }
+	    
+	   .input-field input[type=text]:focus {
+		 border-bottom: 1px solid #00b0ff !important;
+		 box-shadow: 0 1px 0 0 #00b0ff !important;
+	   }
+	    
+	   .input-field input[type=text].valid {
+		 border-bottom: 1px solid #00b0ff !important;
+		 box-shadow: 0 1px 0 0 #00b0ff !important;
+	   }
+	    
+	   .input-field input[type=text].invalid {
+		 border-bottom: 1px solid #d500f9;
+		 box-shadow: 0 1px 0 0 #d500f9;
+	   }
+	    
+	   .input-field .prefix.active {
+		 color: #00b0ff !important;
+	   }
+       
+    </style>
+  <script src="./gumroad-overlay-ae4c986d063996b850a594099261362ed5933ef0ed1eacc386d510ec340c34c9.js.download"></script><style type="text/css">a.gumroad-button { background-color: white !important; background-image: url("https://gumroad.com/button/button_bar.jpg") !important; background-repeat: repeat-x !important; border-radius: 4px !important; box-shadow: rgba(0, 0, 0, .4) 0 0 2px !important; color: #999 !important; display: inline-block !important; font-family: -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 16px !important; font-style: normal !important; font-weight: 500 !important; line-height: 50px !important; padding: 0 15px !important; text-shadow: none !important; text-decoration: none !important; } .gumroad-button-logo { background-image: url("https://gumroad.com/button/button_logo.png") !important; background-size: cover !important; height: 17px !important; width: 16px !important; display: inline-block !important; margin-bottom: -3px !important; margin-right: 15px !important; } .gumroad-loading-indicator { background: white; border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, .1); box-sizing: border-box; display: none; height: 60px; left: 50% !important; margin-left: -30px !important; margin-top: -30px !important; padding: 10px; position: fixed; top: 50% !important; width: 60px; z-index: 99997; } .gumroad-loading-indicator i { background: url("https://gumroad.com/js/loading-rainbow.svg"); height: 40px; width: 40px; display: inline-block; background-size: contain; animation: gumroad-spin 1.5s infinite linear; } .gumroad-overlay-iframe { position: fixed !important; overflow: hidden !important; z-index: 99998 !important; top: 0 !important; right: 0 !important; width: 0; height: 0; border: none !important; margin: 0 !important; padding: 0 !important; zoom: 1; } @keyframes gumroad-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(359deg); } } </style></head>
+  <body>
+
+     
+    <div class="row col s7" id="mycard" style="/* display: block; *//* margin-left: auto; *//* width: 50%; */">
+      <div class="card col s6 hoverable" style="
+    width: 50%;
+">
+        <div class="card-panel blue accent-3 white-text lighten-2"><h5 class="center-align">Lab One Upload</h5></div>
+
+        <div class="card-content">
+    <form class="main" id="form" novalidate="novalidate">
+      <div id="forminner">
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="fullname" type="text" name="Full Name" class="validate" required="">
+            <label for="fullname">Full Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="idnumber" type="text" name="Email" class="validate" required="">
+            <label for="idnumber">ID Number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="file-field input-field col s12">
+            <div class="btn light-blue darken-1">
+              <span>Browse</span>
+              <input id="files" type="file" required="">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="E.g. 10812323_Surname_lab1_GRP1.zip">
+            </div>
+          </div>
+        </div>
+
+        <div class="row col s6">
+          <div class="input-field">
+            <button class="waves-effect waves-light btn blue accent-3 submit-btn" type="submit" onclick="submitForm(); return false;">Submit</button>
+          </div>   
+        </div>
+        <div class="row">
+          <div class="input-field col s12" id="progress">
+          </div>
+        </div>
+      </div>
+      <div id="success" style="display:none">
+        <h5 class="left-align blue-text">File Uploaded</h5>
+        <p>Your file has been successfully uploaded.</p>
+      </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <script src="./jquery.min.js.download"></script>
+    <script src="./materialize.min.js.download"></script>
+    <script src="./gumroad.js.download"></script>
+
+    <script>
+
+      var file, 
+          reader = new FileReader();
+
+      reader.onloadend = function(e) {
+        if (e.target.error != null) {
+          showError("File " + file.name + " could not be read.");
+          return;
+        } else {
+        
+
+          google.script.run
+            .withSuccessHandler(showSuccess)
+            .uploadFileToGoogleDrive(e.target.result, file.name, $('input#fullname').val(), $('input#idnumber').val());
+        }
+      };
+
+      function showSuccess(e) {
+        if (e === "OK") { 
+          $('#forminner').hide();
+          $('#success').show();
+        } else {
+          showError(e);
+        }
+      }
+
+      function submitForm() {
+
+        var files = $('#files')[0].files;
+
+        if (files.length === 0) {
+          showError("Please select a zip file to upload");
+          return;
+        }
+
+        file = files[0];
+
+        if (file.size > 1024 * 1024 * 10) {
+          showError("The file size should be < 10 MB");
+          return;
+        }
+        var extension = file.name.split('.') ;
+        
+        if (extension[1] !==  "zip") {
+        
+           showError("Please upload a valid zip file");
+           return;
+        }
+
+
+
+
+
+
+
+
+        showMessage("Uploading file..");
+
+        reader.readAsDataURL(file);
+
+      }
+
+      function showError(e) {
+        $('#progress').addClass('red-text').html(e);
+      }
+
+      function showMessage(e) {
+        $('#progress').removeClass('red-text').html(e);
+      }
+
+
+    </script>
+
+  
+
+<div class="hiddendiv common"></div><div class="gumroad-loading-indicator"><i></i></div></body></html>
